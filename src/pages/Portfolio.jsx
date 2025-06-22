@@ -1,40 +1,46 @@
 import React from "react";
+import tat1 from '../assets/images/tat1.jpg'
+import tat3 from '../assets/images/tat3.jpg'
+import tat4 from '../assets/images/tat4.jpg'
+import tat5 from '../assets/images/tat5.jpg'
+import tat6 from '../assets/images/tat6.jpg'
+import tat10 from '../assets/images/tat10.jpg'
 
 const tattoos = [
   {
     id: 1,
     title: "Realism Sleeve",
-    imgSrc: "/portfolio/tattoo1.jpg",
+    imgSrc: tat1,
     description: "A detailed black and grey realism sleeve.",
   },
   {
     id: 2,
     title: "Traditional Rose",
-    imgSrc: "/portfolio/tattoo2.jpg",
+    imgSrc: tat3,
     description: "Classic rose with bold lines and vibrant colors.",
   },
   {
     id: 3,
     title: "Geometric Mandala",
-    imgSrc: "/portfolio/tattoo3.jpg",
+    imgSrc: tat4,
     description: "Intricate mandala design with symmetrical details.",
   },
   {
     id: 4,
     title: "Japanese Dragon",
-    imgSrc: "https://pixabay.com/photos/tattoo-artist-hand-sketch-ink-3774428/",
+    imgSrc: tat5,
     description: "Powerful dragon wrapped around the arm.",
   },
   {
     id: 5,
     title: "Minimalist Symbols",
-    imgSrc: "/portfolio/tattoo5.jpg",
+    imgSrc: tat6,
     description: "Clean and minimal symbolic tattoos.",
   },
   {
     id: 6,
     title: "Watercolor Phoenix",
-    imgSrc: "/portfolio/tattoo6.jpg",
+    imgSrc: tat10,
     description: "Colorful phoenix with watercolor style.",
   },
 ];

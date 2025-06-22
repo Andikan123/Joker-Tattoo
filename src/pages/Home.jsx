@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
+import UdLogo from '../assets/images/UDLOGO.jpg'; 
 
 const Home = () => {
   return (
@@ -17,9 +18,9 @@ const Home = () => {
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
         {/* Artist Image */}
         <div className="w-full md:w-1/2 flex justify-center">
-          <div className="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-[6px] border-red-700 shadow-[0_0_30px_#ff0000] hover:scale-105 transition-all duration-500">
+          <div className="w-80 h-80 md:w-80 md:h-80 rounded-full overflow-hidden border-[6px] border-red-700 shadow-[0_0_30px_#ff0000] hover:scale-105 transition-all duration-500">
             <img
-              src="/tattoo-artist-placeholder.jpg"
+              src={UdLogo}
               alt="Tattoo Artist"
               className="w-full h-full object-cover"
             />

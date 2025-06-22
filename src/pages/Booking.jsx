@@ -1,5 +1,5 @@
 import React from "react";
-
+import Ud2 from '../assets/images/Ud2.jpg'; 
 const Booking = () => {
   return (
     <div
@@ -11,7 +11,7 @@ const Booking = () => {
         <div className="md:w-1/2">
           <div className="rounded-xl overflow-hidden shadow-lg border-4 border-red-700">
             <img
-              src="https://images.unsplash.com/photo-1629119586089-cb04ef259554" // Replace with an actual banner image later
+              src={Ud2} // Replace with an actual banner image later
               alt="Tattoo Session Booking"
               className="w-full h-full object-cover"
             />
