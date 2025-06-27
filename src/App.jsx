@@ -9,6 +9,7 @@ import FAQ from "./pages/Faq";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ThankYou from "./pages/ThankYou"; 
+import Pricing from "./pages/Pricing"; 
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/booking" element={<Booking />} />
               <Route path="/reviews" element={<Reviews />} />
+              <Route path="/pricing" element={<Pricing />} />
               <Route path="/faq" element={<FAQ />} />
             </Routes>
             <Footer />

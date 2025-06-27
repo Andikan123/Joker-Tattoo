@@ -1,28 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { db } from "../firebaseConfig";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  serverTimestamp,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState([
-    {
-      name: "Michael A.",
-      quote:
-        "Best tattoo experience I've ever had. Joker brought my vision to life beyond expectation.",
-      image:
-        "https://randomuser.me/api/portraits/men/32.jpg",
-    },
-    {
-      name: "Sarah D.",
-      quote:
-        "Absolutely love the detail and care in every line.",
-      image:
-        "https://randomuser.me/api/portraits/women/44.jpg",
-    },
-  ]);
-
+  const [reviews, setReviews] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     quote: "",
     image: "",
   });
+
+  const reviewsRef = collection(db, "reviews");
+
+  const fetchReviews = async () => {
+    const q = query(reviewsRef, orderBy("timestamp", "desc"));
+    const snapshot = await getDocs(q);
+    const reviewsData = snapshot.docs.map((doc) => doc.data());
+    setReviews(reviewsData);
+  };
+
+  useEffect(() => {
+    fetchReviews();
+  }, []);
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -31,11 +37,18 @@ const Reviews = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.name && formData.quote) {
-      setReviews([{ ...formData }, ...reviews]);
+      await addDoc(reviewsRef, {
+        ...formData,
+        image:
+          formData.image ||
+          "https://cdn-icons-png.flaticon.com/512/1077/1077114.png",
+        timestamp: serverTimestamp(),
+      });
       setFormData({ name: "", quote: "", image: "" });
+      fetchReviews(); // refresh the reviews list
     }
   };
 
@@ -103,10 +116,7 @@ const Reviews = () => {
           >
             <div className="flex items-center gap-4 mb-4">
               <img
-                src={
-                  review.image ||
-                  "https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
-                }
+                src={review.image}
                 alt={review.name}
                 className="w-12 h-12 rounded-full object-cover border-2 border-red-500"
               />
