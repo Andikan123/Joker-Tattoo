@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ThankYou from "./pages/ThankYou"; 
 import Pricing from "./pages/Pricing"; 
+import SocialWidget from './pages/SocialWidget';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <div className="absolute inset-0 bg-[url('/texture.png')] bg-repeat opacity-10 pointer-events-none z-0" />
           <div className="relative z-10">
             <Navbar />
+             <SocialWidget /> {/* ✅ Add it here */}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/portfolio" element={<Portfolio />} />
