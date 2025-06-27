@@ -8,6 +8,7 @@ import Reviews from "./pages/Reviews";
 import FAQ from "./pages/Faq";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ThankYou from "./pages/ThankYou"; 
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/thankyou" element={<ThankYou />} />
               <Route path="/about" element={<About />} />
               <Route path="/booking" element={<Booking />} />
               <Route path="/reviews" element={<Reviews />} />

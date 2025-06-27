@@ -33,57 +33,66 @@ const Booking = () => {
             Book a Session
           </h1>
 
-          <form className="space-y-5">
-            <div>
-              <label className="block text-sm mb-1 text-gray-300">
-                Full Name
-              </label>
-              <input
-                type="text"
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
-                placeholder="John Doe"
-              />
-            </div>
+          <form
+  action="https://formsubmit.co/jokerwilbadof@gmail.com"
+  method="POST"
+  className="space-y-5"
+>
+  {/* Hidden input to disable CAPTCHA and redirect */}
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value="https://jokertatt.netlify.app/thankyou" />
 
-            <div>
-              <label className="block text-sm mb-1 text-gray-300">
-                Email Address
-              </label>
-              <input
-                type="email"
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
-                placeholder="you@example.com"
-              />
-            </div>
+  <div>
+    <label className="block text-sm mb-1 text-gray-300">Full Name</label>
+    <input
+      type="text"
+      name="name"
+      required
+      placeholder="John Doe"
+      className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
+    />
+  </div>
 
-            <div>
-              <label className="block text-sm mb-1 text-gray-300">
-                Preferred Date & Time
-              </label>
-              <input
-                type="datetime-local"
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
-              />
-            </div>
+  <div>
+    <label className="block text-sm mb-1 text-gray-300">Email Address</label>
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@example.com"
+      className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
+    />
+  </div>
 
-            <div>
-              <label className="block text-sm mb-1 text-gray-300">
-                Tattoo Description
-              </label>
-              <textarea
-                rows="4"
-                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
-                placeholder="Describe your tattoo idea..."
-              ></textarea>
-            </div>
+  <div>
+    <label className="block text-sm mb-1 text-gray-300">Preferred Date & Time</label>
+    <input
+      type="datetime-local"
+      name="preferred_time"
+      required
+      className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
+    />
+  </div>
 
-            <button
-              type="submit"
-              className="bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-full font-semibold uppercase tracking-wide w-full"
-            >
-              Submit Booking
-            </button>
-          </form>
+  <div>
+    <label className="block text-sm mb-1 text-gray-300">Tattoo Description</label>
+    <textarea
+      name="tattoo_description"
+      rows="4"
+      required
+      placeholder="Describe your tattoo idea..."
+      className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-white"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    className="bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-full font-semibold uppercase tracking-wide w-full"
+  >
+    Submit Booking
+  </button>
+</form>
+
         </div>
       </div>
     </div>
